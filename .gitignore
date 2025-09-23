@@ -3,6 +3,7 @@
 
 # Miscellaneous
 .env
+/dist
 
 # System files
 .DS_Store

@@ -1,13 +1,27 @@
-import express, { Request, Response } from "express";
-
+import express, { Request, Response } from 'express';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+/**
+ * routes import
+ */
+
+import UserRoute from './routes/user.route';
+
+/**
+ * middlewares
+ */
+
 app.use(express.json());
 
-// Example route
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello from Express + TypeScript!");
+/**
+ * routes
+ */
+
+app.use("/api/user", UserRoute);
+
+app.get('/', (req: Request, res: Response) => {
+  res.send('Success get');
 });
 
 // Start server
