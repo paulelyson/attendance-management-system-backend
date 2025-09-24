@@ -7,19 +7,20 @@ router.get('/', async (req: Request, res: Response) =>
     .then(() => {
       res.json({ data: null, message: 'success get', success: true });
     })
-    .catch((err: Error) => {
-      res.json({ data: null, message: err.message, success: true });
+    .catch((err) => {
+      console.log(err)
+      res.json({ data: null, message: err.message, success: false });
     })
 );
 
-
-router.post('/', async (req: Request, res: Response) =>
+router.get('/', async (req: Request, res: Response) =>
   Promise.resolve()
     .then(() => {
       res.json({ data: null, message: 'success get', success: true });
     })
-    .catch((err: Error) => {
-      res.json({ data: null, message: err.message, success: true });
+    .catch((err) => {
+      console.log(err)
+      res.json({ data: null, message: err.message, success: false });
     })
 );
 
