@@ -6,7 +6,8 @@ const router = Router();
 router.get('/', async (req: Request, res: Response) =>
   Promise.resolve()
     .then(async () => {
-      let results = await UserAttendanceDetail.find({}).lean();
+      let populateQuery = [{ path: 'user', select: 'firstName lastName' }];
+      let results = await UserAttendanceDetail.find({}).populate(populateQuery).lean();
       res.json({ data: results, message: 'Success getting users attendance detail', success: true });
     })
     .catch((err: Error) => {
