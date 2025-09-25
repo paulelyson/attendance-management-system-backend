@@ -3,8 +3,8 @@ import mongoose, { Schema, Types } from 'mongoose';
 interface DailyAttendanceInterface {
   date: Date;
   user: Types.ObjectId;
-  timeIn: String;
-  timeOut: String;
+  timeIn: string;
+  timeOut: string;
 }
 
 const DailyAttendanceSchema = new Schema<DailyAttendanceInterface>(

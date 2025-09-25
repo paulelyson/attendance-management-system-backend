@@ -12,6 +12,8 @@ const DATABASE = process.env.DATABASE || 'mongodb://127.0.0.1:27017/ams_local';
 
 import UserRoute from './routes/user.route';
 import DailyAttendanceRoute from './routes/dailyattendance.route';
+import UserAttendaceDetailRoute from './routes/userattendancedetail.route';
+
 
 /**
  * middlewares
@@ -25,6 +27,7 @@ app.use(express.json());
 
 app.use('/api/user', UserRoute);
 app.use('/api/dailyattendance', DailyAttendanceRoute);
+app.use('/api/userattendancedetail', UserAttendaceDetailRoute);
 
 /**
  * connect to database
