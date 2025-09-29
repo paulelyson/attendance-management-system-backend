@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
+import cors from 'cors';
 require('dotenv').config();
 
 const app = express();
@@ -20,7 +21,7 @@ import UserAttendaceDetailRoute from './routes/userattendancedetail.route';
  */
 
 app.use(express.json());
-
+app.use(cors())
 /**
  * routes
  */
